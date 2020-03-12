@@ -1,0 +1,111 @@
+/* Remove default margin and padding  */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+
+}
+
+/* Google map styling */
+#map {
+  height: 80vh;
+  width: 100%;
+  border: 5px solid #CD9162;
+}
+
+header,
+footer {
+  width: 100%;
+  height: 9vh;
+  background: rgba(0, 0, 0, 0.94);
+  display: flex;
+}
+
+h1 {
+  font-family: Fugaz One, cursive;
+  position: absolute;
+  width: 293px;
+  height: 59px;
+  left: 4px;
+  top: 22px;
+  font-size: 45px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.2em;
+  margin-left: 20px;
+  color: #CD9162;
+  vertical-align: text-bottom;
+  text-decoration: underline;
+}
+
+#logo {
+  width: 70%;
+}
+
+/* Buttons grid */
+.button-container {
+  float: right;
+  width: 30%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+  grid-template-areas: 'button-new place1 place2 place3';
+  align-items: center;
+  justify-items: center;
+}
+
+/* Add new location */
+#button-new {
+  grid-area: button-new;
+}
+
+/*  */
+#button-placehold1 {
+  grid-area: place1;
+}
+
+/*  */
+#button-placehold2 {
+  grid-area: place2;
+}
+
+/* Contact form? */
+#button-placehold3 {
+  grid-area: place3;
+}
+
+/* Footer Social Links */
+.social-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+  grid-template-areas: 'github social1 social2 social3';
+  align-items: center;
+  justify-items: center;
+}
+
+/* GitHub link */
+#github {
+  grid-area: github;
+}
+
+/*  */
+#social-placehold1 {
+  grid-area: social1;
+}
+
+/*  */
+#social-placehold2 {
+  grid-area: social2;
+}
+
+/* Contact form? */
+#social-placehold3 {
+  grid-area: social3;
+}
