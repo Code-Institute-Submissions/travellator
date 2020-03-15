@@ -7,13 +7,12 @@
 img {
   max-width: 100%;
   height: auto;
-
 }
 
 /* Google map styling */
 #map {
   height: 80vh;
-  border: 5px solid #CD9162;
+  border: 5px solid #cd9162;
 }
 
 header,
@@ -37,7 +36,7 @@ h1 {
   text-align: center;
   letter-spacing: 0.2em;
   margin-left: 20px;
-  color: #CD9162;
+  color: #cd9162;
   vertical-align: text-bottom;
   text-decoration: underline;
 }
@@ -53,7 +52,7 @@ h1 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1fr;
-  grid-template-areas: 'button-new button-new place1 place1';
+  grid-template-areas: "button-new button-new place1 place1";
   align-items: center;
   justify-items: center;
 }
@@ -73,24 +72,23 @@ h1 {
   width: 30%;
 }
 
-
-#search {
+#autocomplete {
   width: 100%;
   height: 100%;
   border-width: 0px 0px 0px 0px;
   background: none;
-  color: #CD9162;
+  color: #cd9162;
   font-family: Fugaz One, cursive;
   font-size: 20px;
   text-transform: uppercase;
 }
 
 ::-webkit-input-placeholder {
-  color: #CD9162;
-  opacity: .6;
+  color: #cd9162;
+  opacity: 0.6;
 }
 
-input[type=text] {
+input[type="text"] {
   padding-left: 5px;
 }
 
@@ -105,7 +103,7 @@ input:focus {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1fr;
-  grid-template-areas: 'github social1 social2 social3';
+  grid-template-areas: "github social1 social2 social3";
   align-items: center;
   justify-items: center;
 }
