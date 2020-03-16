@@ -3,13 +3,7 @@ function initialise() {
 }
 
 function initMap() {
-  let autocomplete;
-  autocomplete = new google.maps.places.Autocomplete(
-    document.getElementById('autocomplete'), {
-      types: ['establishments'],
-      fields: ['place_id', 'geometry', 'name']
-    }
-  );
+
   // Creates map in div and gives default center on Europe, removes default UI.
   var map = new google.maps.Map(document.getElementById('map'), {
     center: {
@@ -185,6 +179,19 @@ function initMap() {
       }
     ]
   });
-
+  let autocomplete;
+  autocomplete = new google.maps.places.Autocomplete(
+    document.getElementById('autocomplete'),
+  );
+  autocomplete.setFields(
+    ['address_components', 'geometry', 'name']);
 
 }
+
+let autocomplete;
+autocomplete = new google.maps.places.Autocomplete(
+  document.getElementById('autocomplete'), {
+    types: ['establishments'],
+    fields: ['place_id', 'geometry', 'name']
+  }
+);
