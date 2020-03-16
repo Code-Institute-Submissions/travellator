@@ -180,18 +180,10 @@ function initMap() {
     ]
   });
   let autocomplete;
-  autocomplete = new google.maps.places.Autocomplete(
-    document.getElementById('autocomplete'),
-  );
-  autocomplete.setFields(
-    ['address_components', 'geometry', 'name']);
+  let input = document.getElementById('autocomplete');
+  let options = {
+    types: ['(cities)']
+  };
+  autocomplete = new google.maps.places.Autocomplete(input, options);
 
 }
-
-let autocomplete;
-autocomplete = new google.maps.places.Autocomplete(
-  document.getElementById('autocomplete'), {
-    types: ['establishments'],
-    fields: ['place_id', 'geometry', 'name']
-  }
-);
