@@ -1,65 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="assets/style.css" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Fugaz+One&display=swap"
-      rel="stylesheet"
-    />
-    <title>Document</title>
-  </head>
 
-  <body>
-    <header>
-      <div id="logo">
-        <h1>Travellator</h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="assets/style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Fugaz+One&display=swap" rel="stylesheet" />
+  <title>Document</title>
+</head>
+
+<body>
+  <header>
+    <div id="logo">
+      <a href="#"><img src="/assets/images/Travellator.png" alt=""></a>
+    </div>
+    <!-- Google Autocomplete Destination Search -->
+    <div class="form">
+      <input id="autocomplete" type="text" name="search" placeholder="Search for destination..." />
+    </div>
+
+    <!-- Content buttons on header -->
+    <div class="button-container">
+      <div id="button-reset">
+        <img src="assets/images/reset.png" alt="" id="reset-markers" />
       </div>
-
-      <div class="form">
-        <input
-          id="autocomplete"
-          type="text"
-          name="search"
-          placeholder="Search for destination..."
-        />
+      <div id="button-placehold1">
+        <img src="assets/images/New Button.png" alt="" />
       </div>
+    </div>
+  </header>
 
-      <!-- Content buttons on header -->
-      <div class="button-container">
-        <div id="button-new">
-          <img src="assets/images/New Button.png" alt="" />
-        </div>
-        <div id="button-placehold1">
-          <img src="assets/images/New Button.png" alt="" />
-        </div>
+  <div id="map"></div>
+
+  <footer>
+    <div class="social-container">
+      <div id="github">
+        <img src="assets/images/iconmonstr-github-1 1.png" alt="" />
       </div>
-    </header>
-
-    <div id="map"></div>
-
-    <footer>
-      <div class="social-container">
-        <div id="github">
-          <img src="assets/images/iconmonstr-github-1 1.png" alt="" />
-        </div>
-        <div id="social-placehold1">
-          <img src="assets/images/iconmonstr-linkedin-4 2.png" alt="" />
-        </div>
-        <div id="social-placehold2">
-          <img src="assets/images/iconmonstr-github-1 1.png" alt="" />
-        </div>
-        <div id="social-placehold3">
-          <img src="assets/images/iconmonstr-linkedin-4 2.png" alt="" />
-        </div>
+      <div id="social-placehold1">
+        <img src="assets/images/iconmonstr-linkedin-4 2.png" alt="" />
       </div>
-    </footer>
-    <script
-      async
-      defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBY07TTyUIs4qTfZg-XnNx8_3urMDXnir0&libraries=places&callback=initialise"
-    ></script>
-    <script src="assets/map.js"></script>
-  </body>
+      <div id="social-placehold2">
+        <img src="assets/images/iconmonstr-github-1 1.png" alt="" />
+      </div>
+      <div id="social-placehold3">
+        <img src="assets/images/iconmonstr-linkedin-4 2.png" alt="" />
+      </div>
+    </div>
+  </footer>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBY07TTyUIs4qTfZg-XnNx8_3urMDXnir0&libraries=places&callback=initialise">
+  </script>
+  <script src="assets/map.js"></script>
+</body>
+
 </html>

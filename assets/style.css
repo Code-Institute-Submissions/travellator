@@ -18,7 +18,7 @@ img {
 header,
 footer {
   width: 100%;
-  height: 10vh;
+  height: 9vh;
   background: rgba(0, 0, 0, 0.94);
   display: flex;
 }
@@ -38,11 +38,13 @@ h1 {
   margin-left: 20px;
   color: #cd9162;
   vertical-align: text-bottom;
-  text-decoration: underline;
+
 }
 
 #logo {
   width: 40%;
+  margin-top: 25px;
+  margin-left: 20px;
 }
 
 /* Buttons grid */
@@ -52,14 +54,15 @@ h1 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1fr;
-  grid-template-areas: "button-new button-new place1 place1";
+  grid-template-areas: "button-reset button-reset place1 place1";
   align-items: center;
   justify-items: center;
 }
 
 /* Add new location */
-#button-new {
-  grid-area: button-new;
+#button-reset {
+  grid-area: button-reset;
+  cursor: pointer;
 }
 
 /*  */
@@ -82,11 +85,13 @@ h1 {
   font-family: Fugaz One, cursive;
   text-transform: uppercase;
 }
+
 /* Autocomplete styling */
 .pac-container {
   border: 3px solid #cd9162;
   background: none;
 }
+
 .pac-item {
   color: #436b70;
   font-family: Fugaz One, cursive;
@@ -94,13 +99,13 @@ h1 {
   background: rgba(0, 0, 0, 0.75);
   border: 1px solid #000000;
 }
+
 .pac-item-query {
   font-size: 13px;
   padding-right: 3px;
   color: #cd9162;
 }
-.pac-item:hover {
-}
+
 .pac-logo:after,
 .pac-icon {
   all: unset;
