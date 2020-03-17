@@ -260,6 +260,10 @@ function initMap() {
       map.setZoom(5);
       map.setCenter({ lat: 50.8453493, lng: 14.9068077 });
     });
+  // Add right-click to place marker functionality.
+  map.addListener("rightclick", function(event) {
+    setMarkerCurrent(event.latLng);
+  });
 
   function setMarkerCurrent(location) {
     var marker = new google.maps.Marker({
