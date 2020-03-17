@@ -54,7 +54,7 @@ h1 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1fr;
-  grid-template-areas: "button-reset button-reset place1 place1";
+  grid-template-areas: "button-reset button-reset zoom-out zoom-out";
   align-items: center;
   justify-items: center;
 }
@@ -66,8 +66,9 @@ h1 {
 }
 
 /*  */
-#button-placehold1 {
-  grid-area: place1;
+#button-zoom-out {
+  grid-area: zoom-out;
+  cursor: pointer;
 }
 
 /* Searchbar */

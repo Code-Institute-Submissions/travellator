@@ -247,10 +247,18 @@ function initMap() {
     }
     markers = [];
   }
+  // Add click functionality to reset button. Resets all markers.
   document
     .getElementById("reset-markers")
     .addEventListener("click", function() {
       resetMarkers();
+    });
+  // Add click functionality to zoom out button. Zooms map out.
+  document
+    .getElementById("button-zoom-out")
+    .addEventListener("click", function() {
+      map.setZoom(5);
+      map.setCenter({ lat: 50.8453493, lng: 14.9068077 });
     });
 
   function setMarkerCurrent(location) {
