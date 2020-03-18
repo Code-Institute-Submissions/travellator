@@ -190,7 +190,7 @@ button {
 }
 
 .priorityHigh {
-  background: rgb(220, 20, 60, .5);
+  background: rgba(220, 20, 60, 0.502);
 }
 
 .gm-ui-hover-effect {
