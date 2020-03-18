@@ -5,12 +5,17 @@ function initialise() {
 // Init the map(contains base functionality when opening webpage)
 function initMap() {
   let autocomplete;
-  let input = document.getElementById("autocomplete");
+  var infoWindow = new google.maps.InfoWindow({
+    content: `<button class='priorityLow button' value='low'>low</button>
+      <button class='priorityMed button' value='med'>med</button>
+      <button class='priorityHigh button' value='high'>high</button>`
+  });
   let options = {
     types: ["(cities)"]
   };
 
   // Init autocomplete for searchbar
+  let input = document.getElementById("autocomplete");
   autocomplete = new google.maps.places.Autocomplete(input, options);
   autocomplete.addListener("place_changed", onPlaceChanged);
 
@@ -260,11 +265,28 @@ function initMap() {
       map.setZoom(5);
       map.setCenter({ lat: 50.8453493, lng: 14.9068077 });
     });
+
   // Add right-click to place marker functionality.
   map.addListener("rightclick", function(event) {
-    setMarkerCurrent(event.latLng);
+    map.panTo(event.latLng, map);
+    map.setZoom(10);
+    setPriority(event);
   });
 
+  //---------------------------------------------------------------------
+
+  function setPriority(event, priority) {
+    infoWindow.setPosition(event.latLng);
+    infoWindow.open(map);
+    $("button").click(function() {
+      alert("dddd");
+    });
+    // if (priority){
+
+    // }
+  }
+  // -------------------------------------------------------------------
+  // setMarkerCurrent(event.latLng);
   function setMarkerCurrent(location) {
     var marker = new google.maps.Marker({
       position: location,
