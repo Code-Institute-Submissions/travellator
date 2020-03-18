@@ -6,9 +6,11 @@ function initialise() {
 function initMap() {
   let autocomplete;
   var infoWindow = new google.maps.InfoWindow({
-    content: `<button class='priorityLow button' value='low'>low</button>
+    content: `
+      <button class='priorityLow button' value='low'>low</button>
       <button class='priorityMed button' value='med'>med</button>
-      <button class='priorityHigh button' value='high'>high</button>`
+      <button class='priorityHigh button' value='high'>high</button>
+      <button value='high'>hi</button>`
   });
   let options = {
     types: ["(cities)"]
@@ -274,13 +276,13 @@ function initMap() {
   });
 
   //---------------------------------------------------------------------
-
+  $("button").click(function() {
+    alert("dddd");
+  });
   function setPriority(event, priority) {
     infoWindow.setPosition(event.latLng);
     infoWindow.open(map);
-    $("button").click(function() {
-      alert("dddd");
-    });
+
     // if (priority){
 
     // }
