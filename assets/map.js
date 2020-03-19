@@ -24,6 +24,19 @@ function initMap() {
   autocomplete = new google.maps.places.Autocomplete(input, options);
   autocomplete.addListener("place_changed", onPlaceChanged);
 
+  // Init filter
+
+  $(".filter-buttons").click(function() {
+    console.log("chosen");
+    filterChoice = $(this).val();
+    if (filterChoice == "all") {
+      filterMarkers(markers);
+    } else {
+      filterMarkers(filterChoice);
+      console.log(filterChoice);
+    }
+  });
+
   // Creates map in div and gives default center on Europe, removes default UI.
   var map = new google.maps.Map(document.getElementById("map"), {
     center: {
@@ -259,22 +272,28 @@ function initMap() {
   var priority;
   var marker;
   // Filter functionality
-  $(".filter-buttons").click(function() {
-    console.log("chosen");
-    filterChoice = $(this).val();
-    if (filterChoice == "all") {
-      filterMarkers(markers);
-    } else {
-      filterMarkers(filterChoice);
-    }
-  });
 
   function filterMarkers(fMarker) {
+    console.log(fMarker);
     for (var i = 0; i < markers.length; i++) {
       markers[i].setVisible(false);
     }
-    for (var i = 0; i < fMarker.length; i++) {
-      fMarker[i].setVisible(true);
+    if (fMarker == "fHigh") {
+      for (var i = 0; i < fHigh.length; i++) {
+        fHigh[i].setVisible(true);
+      }
+    } else if (fMarker == "fMed") {
+      for (var i = 0; i < fMed.length; i++) {
+        fMed[i].setVisible(true);
+      }
+    } else if (fMarker == "fLow") {
+      for (var i = 0; i < fLow.length; i++) {
+        fLow[i].setVisible(true);
+      }
+    } else {
+      for (var i = 0; i < markers.length; i++) {
+        markers[i].setVisible(true);
+      }
     }
   }
 
@@ -320,7 +339,8 @@ function initMap() {
     location = event.latLng;
 
     // listens for priority choice
-    $("button").click(function() {
+    $(".button").unbind("click");
+    $(".button").click(function() {
       priority = $(this).val();
       setPriority(location, priority);
       infoWindow.close(map);
@@ -330,12 +350,9 @@ function initMap() {
   function setPriority(event, priority) {
     if (priority == "high") {
       setMarkerCurrent(event, priority, "high");
-      console.log("sent high");
     } else if (priority == "med") {
       setMarkerCurrent(event, priority, "med");
-      console.log("sent med");
     } else if (priority == "low") {
-      console.log("sent low");
       setMarkerCurrent(event, priority, "low");
     } else if (priority == "close") {
       infoWindow.close(map);
@@ -366,7 +383,9 @@ function initMap() {
       markers.push(marker);
     }
     console.log(markers);
-    console.log(fLow);
+    console.log(`low: ${fLow}`);
+    console.log(`med: ${fMed}`);
+    console.log(`high: ${fHigh}`);
     google.maps.event.addListener(marker, "click", function() {
       map.panTo(this.getPosition());
       map.setZoom(10);

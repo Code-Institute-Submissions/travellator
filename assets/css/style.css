@@ -21,8 +21,14 @@ img {
 
 .filter-container {
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 15px;
+  left: 15px;
+}
+
+.filter-buttons {
+  background: #cd9162;
+  width: 10vh;
+  height: 3.5vh;
 }
 
 header,
