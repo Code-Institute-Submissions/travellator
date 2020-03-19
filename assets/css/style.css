@@ -11,7 +11,7 @@ img {
 
 /* Google map styling */
 #map {
-  height: 80vh;
+  height: 81vh;
   border: 5px solid #cd9162;
 }
 
@@ -148,29 +148,29 @@ input:focus {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1fr;
-  grid-template-areas: "github social1 social2 social3";
+  grid-template-areas: "social1 social2 social3 social4";
   align-items: center;
   justify-items: center;
 }
 
 /* GitHub link */
 #github {
-  grid-area: github;
-}
-
-/*  */
-#social-placehold1 {
   grid-area: social1;
 }
 
 /*  */
-#social-placehold2 {
+#linkedin {
   grid-area: social2;
 }
 
-/* Contact form? */
-#social-placehold3 {
+/*  */
+#insta {
   grid-area: social3;
+}
+
+/* Contact form? */
+#twitter {
+  grid-area: social4;
 }
 
 /* Priority Button Styling */

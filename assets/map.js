@@ -10,7 +10,7 @@ function initMap() {
       <button class='priorityLow button' value='low'>low</button>
       <button class='priorityMed button' value='med'>med</button>
       <button class='priorityHigh button' value='high'>high</button>
-      <div class='close-container'><button class='close' value='close'>close</button></div>`
+      <div class='close-container'><button class='close button' value='close'>close</button></div>`
   });
   let options = {
     types: ["(cities)"]
@@ -300,9 +300,6 @@ function initMap() {
   function resetMarkers() {
     for (var i = 0; i < markers.length; i++) {
       markers[i].setMap(null);
-      // fLow[i].setMap(null);
-      // fMed[i].setMap(null);
-      // fHigh[i].setMap(null);
     }
     markers = [];
     fLow = [];
@@ -348,13 +345,14 @@ function initMap() {
   });
 
   function setPriority(event, priority) {
+    console.log(priority);
     if (priority == "high") {
       setMarkerCurrent(event, priority, "high");
     } else if (priority == "med") {
       setMarkerCurrent(event, priority, "med");
     } else if (priority == "low") {
       setMarkerCurrent(event, priority, "low");
-    } else if (priority == "close") {
+    } else {
       infoWindow.close(map);
       console.log("closed");
     }
