@@ -26,7 +26,7 @@ function initMap() {
 
   // Init filter
 
-  $(".filter-buttons").click(function() {
+  $(".filter-buttons").click(function () {
     console.log("chosen");
     filterChoice = $(this).val();
     if (filterChoice == "all") {
@@ -47,218 +47,169 @@ function initMap() {
     disableDefaultUI: true,
 
     // Sets map to night mode to suit style.
-    styles: [
-      {
+    styles: [{
         elementType: "geometry",
-        stylers: [
-          {
-            color: "#242f3e"
-          }
-        ]
+        stylers: [{
+          color: "#242f3e"
+        }]
       },
       {
         elementType: "labels.text.fill",
-        stylers: [
-          {
-            color: "#746855"
-          }
-        ]
+        stylers: [{
+          color: "#746855"
+        }]
       },
       {
         elementType: "labels.text.stroke",
-        stylers: [
-          {
-            color: "#242f3e"
-          }
-        ]
+        stylers: [{
+          color: "#242f3e"
+        }]
       },
       {
         featureType: "administrative.land_parcel",
         elementType: "labels",
-        stylers: [
-          {
-            visibility: "off"
-          }
-        ]
+        stylers: [{
+          visibility: "off"
+        }]
       },
       {
         featureType: "administrative.locality",
         elementType: "labels.text.fill",
-        stylers: [
-          {
-            color: "#d59563"
-          }
-        ]
+        stylers: [{
+          color: "#d59563"
+        }]
       },
       {
         featureType: "poi",
         elementType: "labels.text",
-        stylers: [
-          {
-            visibility: "off"
-          }
-        ]
+        stylers: [{
+          visibility: "off"
+        }]
       },
       {
         featureType: "poi",
         elementType: "labels.text.fill",
-        stylers: [
-          {
-            color: "#d59563"
-          }
-        ]
+        stylers: [{
+          color: "#d59563"
+        }]
       },
       {
         featureType: "poi.park",
         elementType: "geometry",
-        stylers: [
-          {
-            color: "#263c3f"
-          }
-        ]
+        stylers: [{
+          color: "#263c3f"
+        }]
       },
       {
         featureType: "poi.park",
         elementType: "labels.text.fill",
-        stylers: [
-          {
-            color: "#6b9a76"
-          }
-        ]
+        stylers: [{
+          color: "#6b9a76"
+        }]
       },
       {
         featureType: "road",
         elementType: "geometry",
-        stylers: [
-          {
-            color: "#38414e"
-          }
-        ]
+        stylers: [{
+          color: "#38414e"
+        }]
       },
       {
         featureType: "road",
         elementType: "geometry.stroke",
-        stylers: [
-          {
-            color: "#212a37"
-          }
-        ]
+        stylers: [{
+          color: "#212a37"
+        }]
       },
       {
         featureType: "road",
         elementType: "labels.text.fill",
-        stylers: [
-          {
-            color: "#9ca5b3"
-          }
-        ]
+        stylers: [{
+          color: "#9ca5b3"
+        }]
       },
       {
         featureType: "road.arterial",
         elementType: "labels",
-        stylers: [
-          {
-            visibility: "off"
-          }
-        ]
+        stylers: [{
+          visibility: "off"
+        }]
       },
       {
         featureType: "road.highway",
         elementType: "geometry",
-        stylers: [
-          {
-            color: "#746855"
-          }
-        ]
+        stylers: [{
+          color: "#746855"
+        }]
       },
       {
         featureType: "road.highway",
         elementType: "geometry.stroke",
-        stylers: [
-          {
-            color: "#1f2835"
-          }
-        ]
+        stylers: [{
+          color: "#1f2835"
+        }]
       },
       {
         featureType: "road.highway",
         elementType: "labels",
-        stylers: [
-          {
-            visibility: "off"
-          }
-        ]
+        stylers: [{
+          visibility: "off"
+        }]
       },
       {
         featureType: "road.highway",
         elementType: "labels.text.fill",
-        stylers: [
-          {
-            color: "#f3d19c"
-          }
-        ]
+        stylers: [{
+          color: "#f3d19c"
+        }]
       },
       {
         featureType: "road.local",
-        stylers: [
-          {
-            visibility: "off"
-          }
-        ]
+        stylers: [{
+          visibility: "off"
+        }]
       },
       {
         featureType: "road.local",
         elementType: "labels",
-        stylers: [
-          {
-            visibility: "off"
-          }
-        ]
+        stylers: [{
+          visibility: "off"
+        }]
       },
       {
         featureType: "transit",
         elementType: "geometry",
-        stylers: [
-          {
-            color: "#2f3948"
-          }
-        ]
+        stylers: [{
+          color: "#2f3948"
+        }]
       },
       {
         featureType: "transit.station",
         elementType: "labels.text.fill",
-        stylers: [
-          {
-            color: "#d59563"
-          }
-        ]
+        stylers: [{
+          color: "#d59563"
+        }]
       },
       {
         featureType: "water",
         elementType: "geometry",
-        stylers: [
-          {
-            color: "#17263c"
-          }
-        ]
+        stylers: [{
+          color: "#17263c"
+        }]
       },
       {
         featureType: "water",
         elementType: "labels.text.fill",
-        stylers: [
-          {
-            color: "#515c6d"
-          }
-        ]
+        stylers: [{
+          color: "#515c6d"
+        }]
       },
       {
         featureType: "water",
         elementType: "labels.text.stroke",
-        stylers: [
-          {
-            color: "#17263c"
-          }
-        ]
+        stylers: [{
+          color: "#17263c"
+        }]
       }
     ]
   });
@@ -309,13 +260,13 @@ function initMap() {
   // Add click functionality to reset button. Resets all markers.
   document
     .getElementById("reset-markers")
-    .addEventListener("click", function() {
+    .addEventListener("click", function () {
       resetMarkers();
     });
   // Add click functionality to zoom out button. Zooms map out.
   document
     .getElementById("button-zoom-out")
-    .addEventListener("click", function() {
+    .addEventListener("click", function () {
       map.setZoom(3);
       map.setCenter({
         lat: 39.788275,
@@ -326,7 +277,7 @@ function initMap() {
   // -------------------------------------------------------------------
 
   // Add right-click to place marker functionality.
-  map.addListener("rightclick", function(event) {
+  map.addListener("rightclick", function (event) {
     map.panTo(event.latLng, map);
     map.setZoom(10);
 
@@ -337,7 +288,7 @@ function initMap() {
 
     // listens for priority choice
     $(".button").unbind("click");
-    $(".button").click(function() {
+    $(".button").click(function () {
       priority = $(this).val();
       setPriority(location, priority);
       infoWindow.close(map);
@@ -367,7 +318,7 @@ function initMap() {
       position: location,
       map: map,
       animation: google.maps.Animation.DROP,
-      icon: `/assets/images/${priority}.png`
+      icon: `travellator/assets/images/${priority}.png`
     });
 
     if (fVal == "high") {
@@ -384,7 +335,7 @@ function initMap() {
     console.log(`low: ${fLow}`);
     console.log(`med: ${fMed}`);
     console.log(`high: ${fHigh}`);
-    google.maps.event.addListener(marker, "click", function() {
+    google.maps.event.addListener(marker, "click", function () {
       map.panTo(this.getPosition());
       map.setZoom(10);
     });
@@ -400,7 +351,7 @@ function initMap() {
       infoWindow.setPosition(place.geometry.location);
       infoWindow.open(map);
       location = place.geometry.location;
-      $("button").click(function() {
+      $("button").click(function () {
         var priority = $(this).val();
 
         setPriority(location, priority);
