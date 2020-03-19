@@ -1,71 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/travellator/assets/css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Fugaz+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/travellator/assets/css/balloon.css" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <link href="https://fonts.googleapis.com/css?family=Fugaz+One&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/assets/css/balloon.css" />
+    <title>Travellator | Diarise your next destinations</title>
+  </head>
 
-  <title>Travellator | Diarise your next destinations</title>
-</head>
-
-<body>
-  <header>
-    <div id="logo">
-      <a href="#"><img src="/assets/images/Travellator.png" alt="" /></a>
-    </div>
-    <!-- Google Autocomplete Destination Search -->
-    <div class="form">
-      <input id="autocomplete" type="text" name="search" placeholder="Search for destination..." />
-    </div>
-
-    <!-- Content buttons on header -->
-    <div class="button-container">
-      <!-- Reset marker button -->
-      <div aria-label="Click to reset markers!" data-balloon-pos="left" id="button-reset">
-        <img src="assets/images/reset.png" alt="Resets all markers on map" id="reset-markers" />
+  <body>
+    <header>
+      <div id="logo">
+        <a href="#"
+          ><img src="/travellator/assets/images/Travellator.png" alt=""
+        /></a>
       </div>
-      <!-- Zoom reset button -->
-      <div aria-label="Click to reset zoom level!" data-balloon-pos="left" id="button-zoom-out">
-        <img src="assets/images/zoomout.png" alt="zooms map out" />
+      <!-- Google Autocomplete Destination Search -->
+      <div class="form">
+        <input
+          id="autocomplete"
+          type="text"
+          name="search"
+          placeholder="Search for destination..."
+        />
+      </div>
+
+      <!-- Content buttons on header -->
+      <div class="button-container">
+        <!-- Reset marker button -->
+        <div
+          aria-label="Click to reset markers!"
+          data-balloon-pos="left"
+          id="button-reset"
+        >
+          <img
+            src="/travellator/assets/images/reset.png"
+            alt="Resets all markers on map"
+            id="reset-markers"
+          />
+        </div>
+        <!-- Zoom reset button -->
+        <div
+          aria-label="Click to reset zoom level!"
+          data-balloon-pos="left"
+          id="button-zoom-out"
+        >
+          <img
+            src="/travellator/assets/images/zoomout.png"
+            alt="zooms map out"
+          />
+        </div>
+      </div>
+    </header>
+    <div id="wrapper">
+      <div id="map"></div>
+      <div class="filter-container">
+        <button class="filter-buttons" value="all">ALL</button>
+        <button class="filter-buttons" value="fLow">LOW</button>
+        <button class="filter-buttons" value="fMed">MED</button>
+        <button class="filter-buttons" value="fHigh">HIGH</button>
       </div>
     </div>
-  </header>
-  <div id="wrapper">
-    <div id="map"></div>
-    <div class="filter-container">
-      <button class="filter-buttons" value="all">ALL</button>
-      <button class="filter-buttons" value="fLow">LOW</button>
-      <button class="filter-buttons" value="fMed">MED</button>
-      <button class="filter-buttons" value="fHigh">HIGH</button>
-    </div>
-  </div>
-  <footer>
-    <div class="social-container">
-      <a href="https://github.com/Matt-atCasey" target="_blank" id="github">
-        <img src="assets/images/iconmonstr-github-1 1.png" alt="" />
-      </a>
-      <a href="https://www.linkedin.com/in/matthewcaseyy/" target="_blank" id="linkedin">
-        <img src="assets/images/iconmonstr-linkedin-4 2.png" alt="" />
-      </a>
-      <a href="https://www.instagram.com" target="_blank" id="insta">
-        <img src="assets/images/insta.png" alt="" />
-      </a>
-      <a href="https://www.twitter.com" target='_blank' id="twitter">
-        <img src="assets/images/twitter.png" alt="" />
-      </a>
-    </div>
-  </footer>
+    <footer>
+      <div class="social-container">
+        <a href="https://github.com/Matt-atCasey" target="_blank" id="github">
+          <img
+            src="/travellator/assets/images/iconmonstr-github-1 1.png"
+            alt=""
+          />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/matthewcaseyy/"
+          target="_blank"
+          id="linkedin"
+        >
+          <img
+            src="/travellator/assets/images/iconmonstr-linkedin-4 2.png"
+            alt=""
+          />
+        </a>
+        <a href="https://www.instagram.com" target="_blank" id="insta">
+          <img src="/travellator/assets/images/insta.png" alt="" />
+        </a>
+        <a href="https://www.twitter.com" target="_blank" id="twitter">
+          <img src="/travellator/assets/images/twitter.png" alt="" />
+        </a>
+      </div>
+    </footer>
 
-  <!-- JS LOADING -->
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <script defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBY07TTyUIs4qTfZg-XnNx8_3urMDXnir0&libraries=places&callback=initialise">
-  </script>
-  <script src="assets/map.js"></script>
-</body>
-
+    <!-- JS LOADING -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBY07TTyUIs4qTfZg-XnNx8_3urMDXnir0&libraries=places&callback=initialise"
+    ></script>
+    <script src="/travellator/assets/map.js"></script>
+  </body>
 </html>
