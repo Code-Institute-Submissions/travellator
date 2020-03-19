@@ -10,7 +10,7 @@ function initMap() {
       <button class='priorityLow button' value='low'>low</button>
       <button class='priorityMed button' value='med'>med</button>
       <button class='priorityHigh button' value='high'>high</button>
-      <button value='high'>hi</button>`
+      <div class='close-container'><button class='close' value='close'>close</button></div>`
   });
   let options = {
     types: ["(cities)"]
@@ -34,248 +34,346 @@ function initMap() {
     disableDefaultUI: true,
 
     // Sets map to night mode to suit style.
-    styles: [{
+    styles: [
+      {
         elementType: "geometry",
-        stylers: [{
-          color: "#242f3e"
-        }]
+        stylers: [
+          {
+            color: "#242f3e"
+          }
+        ]
       },
       {
         elementType: "labels.text.fill",
-        stylers: [{
-          color: "#746855"
-        }]
+        stylers: [
+          {
+            color: "#746855"
+          }
+        ]
       },
       {
         elementType: "labels.text.stroke",
-        stylers: [{
-          color: "#242f3e"
-        }]
+        stylers: [
+          {
+            color: "#242f3e"
+          }
+        ]
       },
       {
         featureType: "administrative.land_parcel",
         elementType: "labels",
-        stylers: [{
-          visibility: "off"
-        }]
+        stylers: [
+          {
+            visibility: "off"
+          }
+        ]
       },
       {
         featureType: "administrative.locality",
         elementType: "labels.text.fill",
-        stylers: [{
-          color: "#d59563"
-        }]
+        stylers: [
+          {
+            color: "#d59563"
+          }
+        ]
       },
       {
         featureType: "poi",
         elementType: "labels.text",
-        stylers: [{
-          visibility: "off"
-        }]
+        stylers: [
+          {
+            visibility: "off"
+          }
+        ]
       },
       {
         featureType: "poi",
         elementType: "labels.text.fill",
-        stylers: [{
-          color: "#d59563"
-        }]
+        stylers: [
+          {
+            color: "#d59563"
+          }
+        ]
       },
       {
         featureType: "poi.park",
         elementType: "geometry",
-        stylers: [{
-          color: "#263c3f"
-        }]
+        stylers: [
+          {
+            color: "#263c3f"
+          }
+        ]
       },
       {
         featureType: "poi.park",
         elementType: "labels.text.fill",
-        stylers: [{
-          color: "#6b9a76"
-        }]
+        stylers: [
+          {
+            color: "#6b9a76"
+          }
+        ]
       },
       {
         featureType: "road",
         elementType: "geometry",
-        stylers: [{
-          color: "#38414e"
-        }]
+        stylers: [
+          {
+            color: "#38414e"
+          }
+        ]
       },
       {
         featureType: "road",
         elementType: "geometry.stroke",
-        stylers: [{
-          color: "#212a37"
-        }]
+        stylers: [
+          {
+            color: "#212a37"
+          }
+        ]
       },
       {
         featureType: "road",
         elementType: "labels.text.fill",
-        stylers: [{
-          color: "#9ca5b3"
-        }]
+        stylers: [
+          {
+            color: "#9ca5b3"
+          }
+        ]
       },
       {
         featureType: "road.arterial",
         elementType: "labels",
-        stylers: [{
-          visibility: "off"
-        }]
+        stylers: [
+          {
+            visibility: "off"
+          }
+        ]
       },
       {
         featureType: "road.highway",
         elementType: "geometry",
-        stylers: [{
-          color: "#746855"
-        }]
+        stylers: [
+          {
+            color: "#746855"
+          }
+        ]
       },
       {
         featureType: "road.highway",
         elementType: "geometry.stroke",
-        stylers: [{
-          color: "#1f2835"
-        }]
+        stylers: [
+          {
+            color: "#1f2835"
+          }
+        ]
       },
       {
         featureType: "road.highway",
         elementType: "labels",
-        stylers: [{
-          visibility: "off"
-        }]
+        stylers: [
+          {
+            visibility: "off"
+          }
+        ]
       },
       {
         featureType: "road.highway",
         elementType: "labels.text.fill",
-        stylers: [{
-          color: "#f3d19c"
-        }]
+        stylers: [
+          {
+            color: "#f3d19c"
+          }
+        ]
       },
       {
         featureType: "road.local",
-        stylers: [{
-          visibility: "off"
-        }]
+        stylers: [
+          {
+            visibility: "off"
+          }
+        ]
       },
       {
         featureType: "road.local",
         elementType: "labels",
-        stylers: [{
-          visibility: "off"
-        }]
+        stylers: [
+          {
+            visibility: "off"
+          }
+        ]
       },
       {
         featureType: "transit",
         elementType: "geometry",
-        stylers: [{
-          color: "#2f3948"
-        }]
+        stylers: [
+          {
+            color: "#2f3948"
+          }
+        ]
       },
       {
         featureType: "transit.station",
         elementType: "labels.text.fill",
-        stylers: [{
-          color: "#d59563"
-        }]
+        stylers: [
+          {
+            color: "#d59563"
+          }
+        ]
       },
       {
         featureType: "water",
         elementType: "geometry",
-        stylers: [{
-          color: "#17263c"
-        }]
+        stylers: [
+          {
+            color: "#17263c"
+          }
+        ]
       },
       {
         featureType: "water",
         elementType: "labels.text.fill",
-        stylers: [{
-          color: "#515c6d"
-        }]
+        stylers: [
+          {
+            color: "#515c6d"
+          }
+        ]
       },
       {
         featureType: "water",
         elementType: "labels.text.stroke",
-        stylers: [{
-          color: "#17263c"
-        }]
+        stylers: [
+          {
+            color: "#17263c"
+          }
+        ]
       }
     ]
   });
+  var filterChoice;
+  var markers = [];
+  var fLow = [];
+  var fMed = [];
+  var fHigh = [];
+  var location;
+  var filterVal;
+  var priority;
+  var marker;
+  // Filter functionality
+  $(".filter-buttons").click(function() {
+    console.log("chosen");
+    filterChoice = $(this).val();
+    if (filterChoice == "all") {
+      filterMarkers(markers);
+    } else {
+      filterMarkers(filterChoice);
+    }
+  });
 
-
+  function filterMarkers(fMarker) {
+    for (var i = 0; i < markers.length; i++) {
+      markers[i].setVisible(false);
+    }
+    for (var i = 0; i < fMarker.length; i++) {
+      fMarker[i].setVisible(true);
+    }
+  }
 
   function resetMarkers() {
     for (var i = 0; i < markers.length; i++) {
       markers[i].setMap(null);
+      // fLow[i].setMap(null);
+      // fMed[i].setMap(null);
+      // fHigh[i].setMap(null);
     }
     markers = [];
-
+    fLow = [];
+    fMed = [];
+    fHigh = [];
   }
   // Add click functionality to reset button. Resets all markers.
   document
     .getElementById("reset-markers")
-    .addEventListener("click", function () {
+    .addEventListener("click", function() {
       resetMarkers();
     });
   // Add click functionality to zoom out button. Zooms map out.
   document
     .getElementById("button-zoom-out")
-    .addEventListener("click", function () {
-      map.setZoom(5);
+    .addEventListener("click", function() {
+      map.setZoom(3);
       map.setCenter({
-        lat: 50.8453493,
-        lng: 14.9068077
+        lat: 39.788275,
+        lng: -0.935501
       });
     });
 
-
-
-
-
   // -------------------------------------------------------------------
-  var markers = [];
+
   // Add right-click to place marker functionality.
-  map.addListener("rightclick", function (event) {
+  map.addListener("rightclick", function(event) {
     map.panTo(event.latLng, map);
     map.setZoom(10);
+
+    // Open priority selection
     infoWindow.setPosition(event.latLng);
     infoWindow.open(map);
+    location = event.latLng;
 
-    $("button").click(function () {
-      var priority = $(this).val();
-      setPriority(event.latLng, priority);
+    // listens for priority choice
+    $("button").click(function() {
+      priority = $(this).val();
+      setPriority(location, priority);
       infoWindow.close(map);
     });
   });
 
   function setPriority(event, priority) {
-    if (priority == 'high') {
-      setMarkerCurrent(event, priority);
-      console.log('sent high')
-    } else if (priority == 'med') {
-      setMarkerCurrent(event, priority);
-      console.log('sent med')
-    } else if (priority = 'low') {
-      setMarkerCurrent(event, priority);
-      console.log('sent low')
+    if (priority == "high") {
+      setMarkerCurrent(event, priority, "high");
+      console.log("sent high");
+    } else if (priority == "med") {
+      setMarkerCurrent(event, priority, "med");
+      console.log("sent med");
+    } else if (priority == "low") {
+      console.log("sent low");
+      setMarkerCurrent(event, priority, "low");
+    } else if (priority == "close") {
+      infoWindow.close(map);
+      console.log("closed");
     }
   }
 
-  function setMarkerCurrent(location, priority) {
-    console.log(priority)
-
-    console.log(location)
-    var marker = new google.maps.Marker({
+  function setMarkerCurrent(location, priority, fVal) {
+    console.log(priority);
+    // filterVal = fVal;
+    // console.log(fVal);
+    // console.log(location);
+    marker = new google.maps.Marker({
       position: location,
       map: map,
       animation: google.maps.Animation.DROP,
       icon: `/assets/images/${priority}.png`
     });
-    markers.push(marker);
+
+    if (fVal == "high") {
+      fHigh.push(marker);
+      markers.push(marker);
+    } else if (fVal == "med") {
+      fMed.push(marker);
+      markers.push(marker);
+    } else if (fVal == "low") {
+      fLow.push(marker);
+      markers.push(marker);
+    }
     console.log(markers);
+    console.log(fLow);
+    google.maps.event.addListener(marker, "click", function() {
+      map.panTo(this.getPosition());
+      map.setZoom(10);
+    });
   }
   // -------------------------------------------------------------------
   // setMarkerCurrent(event.latLng);
-
 
   function onPlaceChanged() {
     var place = autocomplete.getPlace();
@@ -284,13 +382,14 @@ function initMap() {
       map.setZoom(10);
       infoWindow.setPosition(place.geometry.location);
       infoWindow.open(map);
-
-      $("button").click(function () {
+      location = place.geometry.location;
+      $("button").click(function() {
         var priority = $(this).val();
-        setPriority(place.geometry.location, priority);
+
+        setPriority(location, priority);
         infoWindow.close(map);
       });
-      setMarkerCurrent(place.geometry.location);
+      setMarkerCurrent(location);
       document.getElementById("autocomplete").value = "";
     } else {
       document.getElementById("autocomplete").placeholder =
