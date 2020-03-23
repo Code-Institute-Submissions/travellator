@@ -292,6 +292,11 @@ function initMap() {
       priority = $(this).val();
       setPriority(location, priority);
       infoWindow.close(map);
+      map.panTo({
+        lat: 50.8453493,
+        lng: 14.9068077
+      });
+      map.setZoom(5);
     });
   });
 
@@ -318,7 +323,7 @@ function initMap() {
       position: location,
       map: map,
       animation: google.maps.Animation.DROP,
-      icon: `travellator/assets/images/${priority}.png`
+      icon: `/travellator/assets/images/${priority}.png`
     });
 
     if (fVal == "high") {

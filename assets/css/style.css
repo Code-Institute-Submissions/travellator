@@ -4,6 +4,11 @@
   padding: 0;
 }
 
+body {
+  width: 100%;
+  height: 100%;
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -90,6 +95,7 @@ h1 {
 /* Searchbar */
 .form {
   width: 30%;
+  display: flex;
 }
 
 #autocomplete {
@@ -98,7 +104,7 @@ h1 {
   border-width: 0px 0px 0px 0px;
   background: none;
   color: #cd9162;
-  font-size: 20px;
+  font-size: max(1.3vw, 15px);
   font-family: Fugaz One, cursive;
   text-transform: uppercase;
 }
@@ -241,3 +247,49 @@ button {
 }
 
 /* -------------------------------------------------------------------------------- */
+/* MOBILE */
+
+@media (max-width: 1000px) {
+  #logo {
+    display: none;
+  }
+
+  .form {
+    width: 50vw;
+  }
+
+  #autocomplete {
+    text-align: center;
+  }
+
+  .button-container {
+    width: 50vw;
+  }
+}
+
+@media (max-width:650px) {
+  .button-container {
+    width: 40vw;
+  }
+
+  .form {
+    width: 60vw;
+  }
+
+  #autocomplete {
+    text-align: left;
+  }
+
+  #zoom-out-button,
+  #reset-markers {
+    height: 50px;
+  }
+
+  .gm-style-iw-d {
+    display: table-caption;
+  }
+
+  .button {
+    margin-top: 3px;
+  }
+}
