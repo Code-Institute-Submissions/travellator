@@ -188,12 +188,13 @@ input:focus {
   border: 3px solid #000000;
   padding-bottom: 0px;
   padding-top: 10px;
+  align-items: center;
 
 }
 
 .gm-style-iw-d {
-  overflow: hidden !important;
-  margin-right: 10px;
+  overflow: unset !important;
+  padding-right: 10px;
 }
 
 button {
@@ -297,5 +298,9 @@ button {
 
   .button {
     margin-top: 3px;
+  }
+
+  #wrapper {
+    height: 60vh;
   }
 }
