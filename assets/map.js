@@ -219,7 +219,6 @@ function initMap() {
   var fMed = [];
   var fHigh = [];
   var location;
-  var filterVal;
   var priority;
   var marker;
   // Filter functionality

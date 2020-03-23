@@ -45,7 +45,7 @@ footer {
 }
 
 h1 {
-  font-family: Fugaz One, cursive;
+  font-family: 'Fugaz One', cursive;
   position: absolute;
   width: 293px;
   height: 59px;
@@ -105,7 +105,7 @@ h1 {
   background: none;
   color: #cd9162;
   font-size: max(1.3vw, 15px);
-  font-family: Fugaz One, cursive;
+  font-family: 'Fugaz One', cursive;
   text-transform: uppercase;
 }
 
@@ -117,7 +117,7 @@ h1 {
 
 .pac-item {
   color: #436b70;
-  font-family: Fugaz One, cursive;
+  font-family: 'Fugaz One', cursive;
   text-transform: uppercase;
   background: rgba(0, 0, 0, 0.75);
   border: 1px solid #000000;
@@ -199,7 +199,7 @@ input:focus {
 
 button {
   z-index: -1;
-  font-family: Fugaz One, cursive;
+  font-family: 'Fugaz One', cursive;
   text-transform: uppercase;
   border: 2px solid #000000;
 }
