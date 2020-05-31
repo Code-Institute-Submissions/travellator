@@ -32,7 +32,11 @@ This project uses:
   * Javascript/ Jquery for most of the functionality
   * [Balloon css](https://kazzkiq.github.io/balloon.css/) - Used for Pop ups
   * [Google Maps API](https://developers.google.com/maps/documentation) - Used to add Map and functionality to the page
+  
+## Deployment
+This site is deployed [HERE](https://matt-atcasey.github.io/travellator/) on Github Pages
 
+I have created a test staff user here: code : codeinstitute This is to allow testing of staff only features, such as posting items for sale.## Deployment
 
 ## Credits
 All work was done by me.
